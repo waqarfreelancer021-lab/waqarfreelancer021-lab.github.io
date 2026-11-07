@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+        content="A private integration for connecting four owner-controlled TikTok accounts.">
+  <title>Waqar TikTok Account Manager</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #f4f6fa;
+      color: #172033;
+      font-family: Arial, sans-serif;
+      line-height: 1.7;
+    }
+    main {
+      max-width: 850px;
+      margin: 48px auto;
+      padding: 36px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0,0,0,.06);
+    }
+    h1, h2 { line-height: 1.25; }
+    a { color: #0755b5; }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 20px;
+      margin-bottom: 28px;
+    }
+    .notice {
+      padding: 18px;
+      background: #eef4ff;
+      border-left: 4px solid #0755b5;
+    }
+    button {
+      padding: 14px 22px;
+      border: 0;
+      border-radius: 8px;
+      font-size: 16px;
+      background: #e1e5eb;
+      color: #505967;
+      cursor: not-allowed;
+    }
+    footer {
+      border-top: 1px solid #ddd;
+      margin-top: 32px;
+      padding-top: 20px;
+      font-size: 14px;
+    }
+    @media (max-width: 600px) {
+      main { margin: 16px; padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <nav aria-label="Main navigation">
+      <a href="./" aria-current="page">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </nav>
+
+    <h1>Waqar TikTok Account Manager</h1>
+    <p>
+      A private integration intended for Waqar to connect and manage
+      four owner-controlled TikTok accounts through one TikTok Developer app.
+      It is not offered as a public account-management service.
+    </p>
+
+    <h2>Account connections</h2>
+    <p>
+      Each TikTok account must be authorized separately through TikTok.
+      The integration will request only the permissions needed for its
+      enabled features. Account connections do not grant permission
+      to publish videos automatically.
+    </p>
+
+    <div class="notice">
+      <strong>Setup in progress.</strong>
+      TikTok account connections are currently disabled while the
+      server-side integration is configured and verified.
+    </div>
+
+    <p>
+      <button type="button" disabled
+              aria-describedby="connection-status">
+        Connect TikTok — unavailable during setup
+      </button>
+    </p>
+    <p id="connection-status">
+      This page does not initiate TikTok authorization or publish content.
+    </p>
+
+    <h2>Privacy and security</h2>
+    <p>
+      This public website does not request your TikTok password.
+      Client secrets and account tokens must never be placed in these
+      public pages. Any future account connection will use a separate
+      server-side OAuth service.
+    </p>
+    <p>
+      Read our <a href="privacy.html">Privacy Policy</a> and
+      <a href="terms.html">Terms of Service</a> for more information.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Operated by Waqar.<br>
+      For support, privacy questions, or account-data deletion requests:
+      <a href="mailto:drwaqaruog@gmail.com">drwaqaruog@gmail.com</a>
+    </p>
+
+    <footer>
+      <p>
+        This is an independent project. It is not affiliated with,
+        endorsed by, or sponsored by TikTok.
+        TikTok is a trademark of its respective owner.
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
