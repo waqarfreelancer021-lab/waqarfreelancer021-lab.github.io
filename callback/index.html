@@ -1,2 +1,44 @@
-TikTok authorization
-No authorization code found. Start the login from your app again.
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TikTok Login Callback</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 640px; margin: 40px auto; padding: 0 16px; background: #fafafa; color: #222; }
+  .box { background: #fff; border: 1px solid #ddd; border-radius: 10px; padding: 20px; }
+  code { display: block; word-break: break-all; background: #f1f1f1; padding: 12px; border-radius: 6px; margin: 10px 0; }
+  button { padding: 10px 16px; border: 0; border-radius: 6px; background: #111; color: #fff; cursor: pointer; }
+  .err { color: #b00020; }
+</style>
+</head>
+<body>
+<div class="box">
+  <h2>TikTok authorization</h2>
+  <div id="out">Reading response…</div>
+</div>
+<script>
+  const p = new URLSearchParams(window.location.search);
+  const out = document.getElementById('out');
+  const code = p.get('code');
+  if (code) {
+    out.innerHTML =
+      '<p>Success. Copy this code and paste it into Claude Code within a few minutes (it expires quickly):</p>' +
+      '<code id="c"></code><button id="b">Copy code</button>' +
+      '<p>State: <span id="s"></span></p>';
+    document.getElementById('c').textContent = code;
+    document.getElementById('s').textContent = p.get('state') || '(none)';
+    document.getElementById('b').onclick = () => {
+      navigator.clipboard.writeText(code);
+      document.getElementById('b').textContent = 'Copied!';
+    };
+  } else if (p.get('error')) {
+    out.innerHTML = '<p class="err">Error: <span id="e"></span></p>';
+    document.getElementById('e').textContent =
+      p.get('error') + ' — ' + (p.get('error_description') || '');
+  } else {
+    out.textContent = 'No authorization code found. Start the login from your app again.';
+  }
+</script>
+</body>
+</html>
