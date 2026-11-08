@@ -1,0 +1,26 @@
+:root{--ink:#12233e;--muted:#52647e;--accent:#2663ed;--sky:#eaf1ff;--stroke:#dce4f0;--surface:#fff;--bg:#f7f9fc}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+a{color:#2058d5;text-underline-offset:3px}a:hover{color:#10398f}
+.wrap{width:min(900px,calc(100% - 40px));margin:auto}
+header{background:#101e38;color:#fff;border-bottom:3px solid #4386ff}
+.header-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font-weight:750;font-size:18px}
+.brand-badge{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:10px;background:#3877ff;color:#fff;font-size:13px}
+nav{display:flex;flex-wrap:wrap;gap:10px 22px}nav a{color:#e0eaff;text-decoration:none;font-size:14px}nav a:hover{color:#fff;text-decoration:underline}
+main{padding:45px 0 56px}
+.hero{margin:0 0 25px}.eyebrow{text-transform:uppercase;letter-spacing:.12em;color:#3966ba;font-weight:750;font-size:12px}
+h1{font-size:clamp(30px,5vw,43px);letter-spacing:-.035em;line-height:1.2;margin:8px 0 12px}h2{font-size:21px;margin:32px 0 8px}h3{font-size:17px;margin:23px 0 5px}
+p{margin:0 0 15px}li{margin:5px 0}.lead{font-size:18px;color:var(--muted);max-width:740px}
+.doc,.tile{background:var(--surface);border:1px solid var(--stroke);border-radius:16px;box-shadow:0 5px 22px rgba(20,40,85,.045)}
+.doc{padding:clamp(24px,5vw,45px)}.doc ul,.doc ol{padding-left:22px}.doc p,.doc li{color:#304059}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:27px 0}
+.tile{display:flex;flex-direction:column;gap:8px;padding:24px;text-decoration:none;color:var(--ink)}.tile:hover{border-color:#98b5ee;box-shadow:0 8px 25px rgba(24,65,139,.09)}
+.tile strong{font-size:18px}.tile span{color:var(--muted);font-size:14px}
+.note{margin-top:26px;padding:19px 22px;background:var(--sky);border-left:3px solid #3976ea;border-radius:8px}
+.small,.date{font-size:14px;color:var(--muted)}
+hr{border:0;border-top:1px solid var(--stroke);margin:30px 0}
+footer{border-top:1px solid var(--stroke);padding:24px 0;color:var(--muted);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+@media (max-width:700px){.cards{grid-template-columns:1fr}.header-inner{padding:15px 0;align-items:start;flex-direction:column}main{padding:30px 0 42px}}
